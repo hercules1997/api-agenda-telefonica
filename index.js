@@ -24,9 +24,19 @@ const verificationRequestId = (request, response, next) => {
     next();
 };
 
-app.get("/", (response) => {
-    return response.json({ mensage: "Sucesso" });
-});
+app.get("/login", (request, response) => {
+
+    const { email, password } = request.body;
+
+    const user = {
+        email,
+        password,
+    };
+
+    if (email === user.email && password === user.password) {
+        return response.status(201).json({ mensage: "Sucesso" });
+    }
+   });
 
 //*?--- VERIFICAÇÃO PARA O RETORNO DA URL E DO TIPO DA ROTA ---?*//
 
