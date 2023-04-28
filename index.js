@@ -29,12 +29,14 @@ app.get("/login", (request, response) => {
     const { email, password } = request.body;
 
     const user = {
-        email,
-        password,
+        email: '',
+        password: '',
     };
 
     if (email === user.email && password === user.password) {
-        return response.status(201).json({ mensage: "Sucesso" });
+        return response.status(200).json({ mensage: "Sucesso" });
+    } else {
+        return response.status(404).json({ mensage: "ERROR" });
     }
    });
 
