@@ -29,8 +29,8 @@ app.get("/login", (request, response) => {
     const { email, password } = request.body;
 
     const user = {
-        email: '',
-        password: '',
+        email,
+        password,
     };
 
     if (email === user.email && password === user.password) {
