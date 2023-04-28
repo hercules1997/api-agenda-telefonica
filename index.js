@@ -24,7 +24,7 @@ const verificationRequestId = (request, response, next) => {
     next();
 };
 
-app.get("/contatos", (request, response) => {
+app.get("/login", (request, response) => {
 
     const { email, password } = request.body;
 
