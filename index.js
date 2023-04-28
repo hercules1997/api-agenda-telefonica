@@ -33,7 +33,7 @@ app.get("/login", (request, response) => {
         password,
     };
 
-    if (email === user.email && password === user.password) {
+    if (!email === user.email && !password === user.password) {
         return response.status(200).json({ mensage: "Sucesso" });
     } else {
         return response.status(404).json({ mensage: "ERROR" });
